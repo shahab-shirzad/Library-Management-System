@@ -10,30 +10,31 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+//نویسنده
 @Entity
 @Table(name = "author_tbl")
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Data
-//نویسنده
 public class AuthorEntity {
+
+    //شناسه یکتای نویسنده
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //شناسه یکتای نویسنده
     private Long id;
 
-    @NotBlank(message = "فیلد نام نویسنده را پر کنید")
     //نام نویسنده
+    @NotBlank(message = "فیلد نام نویسنده را پر کنید")
     private String firstName;
 
-    @NotBlank(message = "فیلد نام خانوادگی نویسنده را پر کنید")
     //نام خانوادگی نویسنده
+    @NotBlank(message = "فیلد نام خانوادگی نویسنده را پر کنید")
     private String lastName;
 
     //زندگی‌نامه و توضیحات مربوط به نویسنده
     private String biography;
 
-    @CreationTimestamp
     //تاریخ ثبت نویسنده
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
 
